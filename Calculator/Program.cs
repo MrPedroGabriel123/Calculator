@@ -10,6 +10,7 @@
             Console.WriteLine("What is your second number?");
             var second = Console.ReadLine();
             Console.WriteLine("What will the operation be? (+ / -  *) ");
+            var third = Console.ReadLine();
 
         }
     }
