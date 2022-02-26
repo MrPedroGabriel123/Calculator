@@ -11,7 +11,25 @@
             Console.WriteLine("What is your second number?");
             var second = Console.ReadLine();
             Console.WriteLine("What will the operation be? (+ / -  *) ");
-            var third = Console.ReadLine();
+           string operation = Console.ReadLine()!;
+            if (operation == "+")
+            {
+                Console.WriteLine($"Your Result: {first} + {second}= ");
+            }
+            if (operation == "-")
+            {
+                Console.WriteLine($"Your Result: {first} - {second}= ");
+            }
+            if (operation == "*")
+            {
+                Console.WriteLine($"Your Result: {first} * {second}= ");
+
+            }
+            if (operation == "/")
+            {
+                Console.WriteLine($"Your Result: {first} / {second}=");
+            }
+
 
         }
     }
