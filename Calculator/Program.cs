@@ -6,6 +6,7 @@ internal static class Calculator
     {
         while (true)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Enter first number...");
             var userFirstNumber = Console.ReadLine();
             Console.WriteLine("Enter second number...");
