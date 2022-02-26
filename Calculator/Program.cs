@@ -1,38 +1,56 @@
-﻿namespace Calculator
+﻿namespace Calculator;
+
+internal static class Calculator
 {
-    class Calculator
+    private static void Main()
     {
-        static void Main()
+        while (true)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Welcome to calculator!");
-            Console.WriteLine("What is your first number?");
-            double first = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("What is your second number?");
-            double second = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("What will the operation be? (+ / -  *) ");
-            string operation = Console.ReadLine()!;
-            
-           if (operation == "+")
-            {
-                Console.WriteLine("Your Result: {0}", (first + second));
-            }
-            if (operation == "-")
-            {
-                Console.WriteLine("Your Result: {0}", (first - second));
-            }
-            if (operation == "*")
-            {
-                Console.WriteLine("Your Result: {0}", (first * second));
+            Console.WriteLine("Enter first number...");
+            var userFirstNumber = Console.ReadLine();
+            Console.WriteLine("Enter second number...");
+            var userSecondNumber = Console.ReadLine();
+            Console.WriteLine("Enter operation (* / + -)...");
+            var operation = Console.ReadLine();
 
-            }
-            if (operation == "/")
+            if (!int.TryParse(userFirstNumber, out var firstNumber))
             {
-                Console.WriteLine("Your Result: {0}", (first / second));
+                Console.WriteLine("Invalid number(s)...");
+                continue;
             }
 
+            if (!int.TryParse(userSecondNumber, out var secondNumber))
+            {
+                Console.WriteLine("Invalid number(s)...");
+                continue;
+            }
 
+            switch (operation)
+            {
+                case "*":
+                    Console.WriteLine($"Answer: {firstNumber * secondNumber}");
+                    break;
+                case "/":
+                    if (firstNumber == 0 || secondNumber == 0)
+                    {
+                        Console.WriteLine("Cannot divide by zero...");
+                        continue;
+                    }
+
+                    Console.WriteLine($"Answer: {firstNumber / secondNumber}");
+                    break;
+                case "+":
+                    Console.WriteLine($"Answer: {firstNumber + secondNumber}");
+                    break;
+                case "-":
+                    Console.WriteLine($"Answer: {firstNumber - secondNumber}");
+                    break;
+                default:
+                    Console.WriteLine("Invalid input, try again...");
+                    continue;
+            }
+
+            break;
         }
     }
 }
-
