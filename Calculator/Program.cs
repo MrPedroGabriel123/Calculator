@@ -55,7 +55,9 @@ internal static class Calculator
                     continue;
             }
 
-            break;
+            continue;
+            
         }
+
     }
 }
